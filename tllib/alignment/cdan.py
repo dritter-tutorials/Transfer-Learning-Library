@@ -80,7 +80,7 @@ class ConditionalDomainAdversarialLoss(nn.Module):
     def __init__(self, domain_discriminator: nn.Module, entropy_conditioning: Optional[bool] = False,
                  randomized: Optional[bool] = False, num_classes: Optional[int] = -1,
                  features_dim: Optional[int] = -1, randomized_dim: Optional[int] = 1024,
-                 reduction: Optional[str] = 'mean', sigmoid=True):
+                 reduction: Optional[str] = 'mean', sigmoid=False):
         super(ConditionalDomainAdversarialLoss, self).__init__()
         self.domain_discriminator = domain_discriminator
         self.grl = WarmStartGradientReverseLayer(alpha=1., lo=0., hi=1., max_iters=1000, auto_step=True)

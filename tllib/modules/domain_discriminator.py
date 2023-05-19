@@ -26,7 +26,7 @@ class DomainDiscriminator(nn.Sequential):
         - Outputs: :math:`(minibatch, 1)`
     """
 
-    def __init__(self, in_feature: int, hidden_size: int, batch_norm=True, sigmoid=True):
+    def __init__(self, in_feature: int, hidden_size: int, batch_norm=True, sigmoid=False):
         if sigmoid:
             final_layer = nn.Sequential(
                 nn.Linear(hidden_size, 1),
